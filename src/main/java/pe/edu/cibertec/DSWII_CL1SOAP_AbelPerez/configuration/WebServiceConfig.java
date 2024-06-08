@@ -68,5 +68,20 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         return new SimpleXsdSchema(new ClassPathResource("xsd/Perfecto.xsd"));
     }
 
+    @Bean(name = "controlAlcoholemia")
+    public DefaultWsdl11Definition controlAlcoholemiaWsdl11Definition(XsdSchema controlAlcoholemiaSchema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("ControlAlcoholemiaPort");
+        wsdl11Definition.setLocationUri("/ws/controlAlcoholemia");
+        wsdl11Definition.setTargetNamespace("http://www.cibertec.edu.pe/ws/objects");
+        wsdl11Definition.setSchema(controlAlcoholemiaSchema);
+        return wsdl11Definition;
+    }
+
+    @Bean
+    public XsdSchema controlAlcoholemiaSchema() {
+        return new SimpleXsdSchema(new ClassPathResource("xsd/ControlAlcoholemia.xsd"));
+    }
+
 
 }
