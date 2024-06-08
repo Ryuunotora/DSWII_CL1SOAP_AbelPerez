@@ -12,11 +12,11 @@ import pe.edu.cibertec.ws.objects.AñoResponse;
 @Endpoint
 public class AñoEndPoint {
 
-    private static final String NAMESPACE_URI = "http://www.cibertec.edu.pe/ws/objects";
+    private static final String NAMESPACE_URL = "http://www.cibertec.edu.pe/ws/objects";
 
 
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "AñoRequest")
+    @PayloadRoot(namespace = NAMESPACE_URL, localPart = "AñoRequest")
     @ResponsePayload
     public AñoResponse checkAño(@RequestPayload AñoRequest request) {
         AñoResponse response = new AñoResponse();

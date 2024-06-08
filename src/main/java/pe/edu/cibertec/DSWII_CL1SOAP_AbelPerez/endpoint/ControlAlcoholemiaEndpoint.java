@@ -12,9 +12,9 @@ import pe.edu.cibertec.ws.objects.ControlAlcoholemiaResponse;
 @Endpoint
 public class ControlAlcoholemiaEndpoint {
 
-    private static final String NAMESPACE_URI = "http://www.cibertec.edu.pe/ws/objects";
+    private static final String NAMESPACE_URL = "http://www.cibertec.edu.pe/ws/objects";
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "ControlAlcoholemiaRequest")
+    @PayloadRoot(namespace = NAMESPACE_URL, localPart = "ControlAlcoholemiaRequest")
     @ResponsePayload
     public ControlAlcoholemiaResponse checkAlcoholemia(@RequestPayload ControlAlcoholemiaRequest request) {
         ControlAlcoholemiaResponse response = new ControlAlcoholemiaResponse();

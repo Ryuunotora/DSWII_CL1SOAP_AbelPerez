@@ -1,5 +1,6 @@
 package pe.edu.cibertec.DSWII_CL1SOAP_AbelPerez.endpoint;
 
+import lombok.AllArgsConstructor;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -7,12 +8,13 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import pe.edu.cibertec.ws.objects.CalificacionRequest;
 import pe.edu.cibertec.ws.objects.CalificacionResponse;
 
+@AllArgsConstructor
 @Endpoint
 public class CalificacionEndPoint {
 
-    private static final String NAMESPACE_URI = "http://www.cibertec.edu.pe/ws/objects";
+    private static final String NAMESPACE_URL = "http://www.cibertec.edu.pe/ws/objects";
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "CalificacionRequest")
+    @PayloadRoot(namespace = NAMESPACE_URL, localPart = "CalificacionRequest")
     @ResponsePayload
     public CalificacionResponse verificarCalificacion(@RequestPayload CalificacionRequest request) {
         int promedio = calcularPromedio(request.getCalificacion1(), request.getCalificacion2(), request.getCalificacion3());
