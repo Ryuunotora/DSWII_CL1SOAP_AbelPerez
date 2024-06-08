@@ -39,7 +39,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
     }
 
     @Bean(name = "calificacion")
-    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema calificacionSchema) {
+    public DefaultWsdl11Definition calificacionWsdl11Definition(XsdSchema calificacionSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("CalificacionPort");
         wsdl11Definition.setLocationUri("/ws/calificacion");
@@ -53,6 +53,20 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         return new SimpleXsdSchema(new ClassPathResource("xsd/Calificacion.xsd"));
     }
 
+    @Bean(name = "perfecto")
+    public DefaultWsdl11Definition perfectoWsdl11Definition(XsdSchema perfectoSchema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("PerfectoPort");
+        wsdl11Definition.setLocationUri("/ws/perfecto");
+        wsdl11Definition.setTargetNamespace("http://www.cibertec.edu.pe/ws/objects");
+        wsdl11Definition.setSchema(perfectoSchema);
+        return wsdl11Definition;
+    }
+
+    @Bean
+    public XsdSchema perfectoSchema() {
+        return new SimpleXsdSchema(new ClassPathResource("xsd/Perfecto.xsd"));
+    }
 
 
 }

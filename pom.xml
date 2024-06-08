@@ -85,7 +85,7 @@
 				</executions>
 				<configuration>
 					<sources>
-						<source>${project.basedir}/src/main/resources/xsd/Calificacion.xsd</source>
+						<source>${project.basedir}/src/main/resources/xsd/Perfecto.xsd</source>
 					</sources>
 					<outputDirectory>src/main/java</outputDirectory>
 					<clearOutputDir>false</clearOutputDir>
