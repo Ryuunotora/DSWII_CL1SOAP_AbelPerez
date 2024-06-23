@@ -68,6 +68,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         return new SimpleXsdSchema(new ClassPathResource("xsd/Perfecto.xsd"));
     }
 
+
     @Bean(name = "controlAlcoholemia")
     public DefaultWsdl11Definition controlAlcoholemiaWsdl11Definition(XsdSchema controlAlcoholemiaSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
@@ -77,6 +78,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         wsdl11Definition.setSchema(controlAlcoholemiaSchema);
         return wsdl11Definition;
     }
+
 
     @Bean
     public XsdSchema controlAlcoholemiaSchema() {
